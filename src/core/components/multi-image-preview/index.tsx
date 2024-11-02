@@ -7,8 +7,8 @@ type MultiImagePreviewProps = {
 export const MultiImagePreview = ({listImage}: MultiImagePreviewProps) => {
     const [activeImage, setActiveImage] = useState<number>(0);
     return (
-        <div className={'relative'}>
-            <div className={'w-full h-auto text-nowrap overflow-hidden relative'}>
+        <div className='relative'>
+            <div className='w-full h-auto text-nowrap overflow-hidden relative'>
                 <Image.PreviewGroup
                     preview={{
                         onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
@@ -19,8 +19,8 @@ export const MultiImagePreview = ({listImage}: MultiImagePreviewProps) => {
                     ))}
                 </Image.PreviewGroup>
             </div>
-            <div className={'pt-5'}>
-                <div className={'flex gap-2 overscroll-x-auto'}>
+            <div className='pt-5'>
+                <div className='flex gap-2 overscroll-x-auto'>
                     {listImage.map((item, index) => (
                         <button key={index} className={activeImage === index ? 'w-16 border border-red-600 hover:border-red-600 rounded-md p-1' : 'w-16 border border-neutral-300 hover:border-red-600 rounded-md p-1'}
                                 onClick={()=>{

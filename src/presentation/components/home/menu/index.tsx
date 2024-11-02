@@ -4,6 +4,10 @@ import queryString from "query-string";
 const InlineMenu = () => {
     const list = [
         {
+            id: 0,
+            name: 'all products'
+        },
+        {
             id: 1,
             name: 'beauty'
         },
@@ -70,10 +74,10 @@ const InlineMenu = () => {
     ];
 
     return (
-        <div className={'lg:border-r flex flex-wrap lg:flex-col gap-1'}>
+        <div className='lg:border-r flex flex-wrap lg:flex-col gap-1'>
             {list.map((item, index)=>{
                 const queryParams = queryString.stringify({category: item.name});
-                return <NavLink className={'category-item uppercase '} key={index} to={`/category/${queryParams}`}>
+                return <NavLink className='category-item uppercase ' key={index} to={item.name === 'all products' ? '/' : `/category/${queryParams}`}>
                     {item.name}
                 </NavLink>
             })}

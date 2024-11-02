@@ -8,8 +8,8 @@ const contentStyle: React.CSSProperties = {
 
 const content = <div style={contentStyle} />;
 
-export const LoadingPage = () => (
-    <div style={{
+export const LoadingPage = ({loading}:{loading:boolean}) => (
+    !loading ? null : <div style={{
         height: '100vh',
         width: '100%',
         display: 'flex',
