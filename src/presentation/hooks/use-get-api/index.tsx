@@ -10,7 +10,7 @@ function useGetApi<TData>({url, config,}: UseQueryApiOptions) {
     const {data, isLoading, error} = useQuery<TData>({
         queryKey: [url],
         queryFn: async () => {
-            const response = await axios.get<TData>(url, config);
+            const response = await axios.get<TData>(`https://dummyjson.com${url}`, config);
             return response.data;
         },
         staleTime: 1000 * 60 * 5, // 5 minutes

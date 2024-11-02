@@ -6,10 +6,11 @@ import {MultiImagePreview} from "../../../core/components/multi-image-preview";
 import {ProductType} from "../../../shared/validation/type";
 import useQueryApi from "../../hooks/use-get-api";
 import useGetQueryId from "../../hooks/use-get-query";
+import {ProductsService} from "../../../core/services/products-service.ts";
 
 export default function DetailPage() {
     const idProduct = useGetQueryId('id');
-    const {data, isLoading, error} = useQueryApi<ProductType>({url: `https://dummyjson.com/products/${idProduct}`});
+    const {data, isLoading, error} = useQueryApi<ProductType>({url: ProductsService.PRODUCT_DETAIL(`${idProduct}`)});
 
     return (
         <div>

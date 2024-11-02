@@ -3,9 +3,10 @@ import useQueryApi from "../../hooks/use-get-api";
 import {LoadingPage} from "../../../core/components/loading";
 import {NotFoundPage} from "../../../core/components/404";
 import {ProductCard} from "../../../core/components/product-card";
+import {ProductsService} from "../../../core/services/products-service.ts";
 
 export const HomePage = () => {
-    const {data, isLoading, error} = useQueryApi<ProductsApiType>({url: 'https://dummyjson.com/products'});
+    const {data, isLoading, error} = useQueryApi<ProductsApiType>({url: ProductsService.PRODUCTS});
 
     return (
         <div className='w-full h-full'>
