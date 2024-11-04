@@ -1,6 +1,6 @@
 import {HomePage} from "../../../presentation/pages/home/Page.tsx";
-import DetailPage from "../../../presentation/pages/detail";
-import {CategoryProduct} from "../../../presentation/components/home/category-product";
+import DetailPage from "../../../presentation/pages/detail/Page.tsx";
+import {CategoryProduct} from "../../../presentation/pages/home/widgets/category-product";
 import {HomeLayout} from "../../../presentation/layout/home";
 
 const routes = [

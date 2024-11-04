@@ -1,5 +1,8 @@
-export const NotFoundPage = ({error}:{error:Error | null}) => (
-    !error ? null : <div className='h-full w-full flex items-center justify-center font-bold text-xl'>
-        404 not found!
+interface NotFoundProps {
+    error: Error | null
+}
+export const NotFoundPage = ({error}: NotFoundProps) => (
+    !error ? null : <div className='h-dvh w-full flex items-center justify-center font-bold text-xl'>
+        404: Not found!
     </div>
 )

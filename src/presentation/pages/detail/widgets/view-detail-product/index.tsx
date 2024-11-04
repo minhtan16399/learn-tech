@@ -1,6 +1,6 @@
-import {ProductType} from "../../../../shared/validation/type";
+import {ProductDetailType} from "../../types/product-detail.res.ts";
 
-export const ViewDetailProduct = ({product}:{product:ProductType}) => {
+export const ViewDetailProduct = ({product}:{product:ProductDetailType}) => {
     return (
         <div>
             <div className='p-5'>

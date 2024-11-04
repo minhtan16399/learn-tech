@@ -1,4 +1,5 @@
 import {Spin} from "antd";
+import React from "react";
 
 const contentStyle: React.CSSProperties = {
     padding: 50,
@@ -9,14 +10,7 @@ const contentStyle: React.CSSProperties = {
 const content = <div style={contentStyle} />;
 
 export const LoadingPage = ({loading}:{loading:boolean}) => (
-    !loading ? null : <div style={{
-        height: '100vh',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.05)',
-    }}>
+    !loading ? null : <div className='h-dvh w-full flex justify-center items-center bg-[rgba(0,0,0,0.05)]'>
         <Spin tip="Loading..." size="large">
             {content}
         </Spin>

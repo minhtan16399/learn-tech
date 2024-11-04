@@ -1,16 +1,12 @@
 import {NavLink} from "react-router-dom";
-import {ViewDetailProduct} from "../../components/detail-product/view-detail-product";
+import {ViewDetailProduct} from "./widgets/view-detail-product";
 import {LoadingPage} from "../../../core/components/loading";
 import {NotFoundPage} from "../../../core/components/404";
 import {MultiImagePreview} from "../../../core/components/multi-image-preview";
-import {ProductType} from "../../../shared/validation/type";
-import useQueryApi from "../../hooks/use-get-api";
-import useGetQueryId from "../../hooks/use-get-query";
-import {ProductsService} from "../../../core/services/products-service.ts";
+import {useGetProductDetail} from "../../hooks/use-get-product-detail";
 
 export default function DetailPage() {
-    const idProduct = useGetQueryId('id');
-    const {data, isLoading, error} = useQueryApi<ProductType>({url: ProductsService.PRODUCT_DETAIL(`${idProduct}`)});
+    const {data, isLoading, error} = useGetProductDetail();
 
     return (
         <div>

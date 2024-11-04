@@ -1,13 +1,13 @@
 import {ProductType} from "../../../shared/validation/type";
 import {NavLink} from "react-router-dom";
-import useSetQueryId from "../../../presentation/hooks/use-set-query";
+import queryString from "query-string";
 
 type ProductCardProps = {
     item: ProductType;
 };
 
 export const ProductCard = ({item}: ProductCardProps) => {
-    const queryIdProduct = useSetQueryId({id: item.id});
+    const queryIdProduct = queryString.stringify({id: item.id});
     return (
         <div className='col-span-1 p-4 shadow-md rounded-lg h-full'>
             <div className='flex flex-col gap-5 justify-start h-full'>
