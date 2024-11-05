@@ -1,15 +1,15 @@
 import { errorHandler } from './errorHandler.ts';
 import axios from "axios";
+import {HttpMethod} from "../services/httpMethod.ts";
+import {URL} from "../constant/apiUrl.ts";
 
 const client = axios.create({
-    baseURL: 'https://dummyjson.com',
+    baseURL: URL.base,
     timeout: 10000, // Thiết lập timeout
     headers: {
         'Content-Type': 'application/json',
     },
 });
-
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
 export interface ApiResponse<T> {
     data: T;
