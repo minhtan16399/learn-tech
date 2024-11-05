@@ -3,7 +3,7 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import AppRoute from "./core/components/AppRoutes.tsx";
-import routes from './core/constant/routers/routers-config.tsx';
+import routes from './core/constant/routers/routes.tsx';
 
 const queryClient = new QueryClient();
 

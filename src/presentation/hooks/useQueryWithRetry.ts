@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 
-const useQueryWithRetry = <TData, TError>(queryKey: string, queryFn: () => Promise<TData>): UseQueryResult<TData, TError> => {
-    return useQuery<TData, TError>({
+const useQueryWithRetry = <TData>(queryKey: string, queryFn: () => Promise<TData>): UseQueryResult<TData> => {
+    return useQuery<TData>({
         queryKey: [queryKey],
         queryFn,
         retry: 5,

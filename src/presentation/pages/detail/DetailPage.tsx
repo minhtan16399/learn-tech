@@ -1,9 +1,10 @@
 import {NavLink} from "react-router-dom";
-import {ViewDetailProduct} from "./widgets/view-detail-product";
+import {ViewDetailProduct} from "./widgets/DetailProduct.tsx";
 import {LoadingPage} from "../../../core/components/loading";
 import {NotFoundPage} from "../../../core/components/404";
 import {MultiImagePreview} from "../../../core/components/multi-image-preview";
-import {useGetProductDetail} from "../../hooks/use-get-product-detail";
+import {useGetProductDetail} from "../../hooks/useGetProductDetail.ts";
+import {ROUTERS} from "../../../core/constant/routers/router.config.ts";
 
 export default function DetailPage() {
     const {data, isLoading, error} = useGetProductDetail();
@@ -16,13 +17,13 @@ export default function DetailPage() {
                 {
                     data ? <div className='gap-5 grid grid-cols-2'>
                         <div className='border rounded-xl p-8'>
-                            <MultiImagePreview listImage={data.images}/>
+                            <MultiImagePreview listImage={data?.images}/>
                         </div>
                         <div className='pt-10'>
-                            <ViewDetailProduct product={data}/>
+                            <ViewDetailProduct product={data ?? {}}/>
                         </div>
                         <div className='w-full text-end col-span-2'>
-                            <NavLink to={'/'} className='rounded-md text-white hover:bg-red-400 p-3 bg-green-400'>Back
+                            <NavLink to={ROUTERS.HOME} className='rounded-md text-white hover:bg-red-400 p-3 bg-green-400'>Back
                                 Home</NavLink>
                         </div>
                     </div> : null

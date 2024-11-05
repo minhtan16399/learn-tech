@@ -1,4 +1,4 @@
-import InlineMenu from "../../pages/home/widgets/menu";
+import InlineMenu from "../pages/home/widgets/Menu.tsx";
 import {Outlet} from "react-router-dom";
 
 export const HomeLayout = () => {

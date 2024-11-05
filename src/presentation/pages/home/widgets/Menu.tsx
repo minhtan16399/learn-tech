@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import queryString from "query-string";
+import {ROUTERS} from "../../../../core/constant/routers/router.config.ts";
 
 const InlineMenu = () => {
     const list = [
@@ -77,7 +78,7 @@ const InlineMenu = () => {
         <div className='lg:border-r flex flex-wrap lg:flex-col gap-1'>
             {list.map((item, index)=>{
                 const queryParams = queryString.stringify({category: item.name});
-                return <NavLink className='category-item uppercase ' key={index} to={item.name === 'all products' ? '/' : `/category/${queryParams}`}>
+                return <NavLink className='category-item uppercase ' key={index} to={item.name === 'all products' ? `${ROUTERS.HOME}` : `${ROUTERS.CATEGORY}/${queryParams}`}>
                     {item.name}
                 </NavLink>
             })}

@@ -1,4 +1,4 @@
-import {ProductType} from "../../../../shared/validation/type";
+import {ProductType} from "../../../../shared/models/productType.ts";
 
 export type ProductsApiType = {
     limit: number;

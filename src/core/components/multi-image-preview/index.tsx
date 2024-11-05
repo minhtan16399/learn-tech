@@ -15,7 +15,7 @@ export const MultiImagePreview = ({listImage}: MultiImagePreviewProps) => {
                     }}
                 >
                     {listImage.map((item, index) => (
-                        <Image key={index} className={activeImage === index ? 'w-full transition-all opacity-100 duration-500' : 'duration-500 absolute transition-all opacity-0'} src={item} alt={`alt of ${index}`}/>
+                        <Image key={index} className={activeImage === index ? 'min-h-[400px] w-full transition-all opacity-100 duration-500' : 'duration-500 absolute transition-all opacity-0'} src={item} alt={`alt of ${index}`}/>
                     ))}
                 </Image.PreviewGroup>
             </div>
@@ -27,7 +27,7 @@ export const MultiImagePreview = ({listImage}: MultiImagePreviewProps) => {
                                     setActiveImage(index);
                                 }}
                         >
-                            <img src={item} alt={`alt of image ${index}`}/>
+                            <img className='min-h-[50px]' src={item} alt={`alt of image ${index}`}/>
                         </button>
                     ))}
                 </div>

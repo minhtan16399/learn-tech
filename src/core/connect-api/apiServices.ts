@@ -1,6 +1,13 @@
+import { errorHandler } from './errorHandler.ts';
+import axios from "axios";
 
-import apiClient from './client';
-import { errorHandler } from './error-handler';
+const client = axios.create({
+    baseURL: 'https://dummyjson.com',
+    timeout: 10000, // Thiết lập timeout
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
 
 type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
@@ -14,16 +21,16 @@ export const apiService = async <T>(url: string, method: HttpMethod, data?: unkn
 
         switch (method) {
             case 'GET':
-                response = await apiClient.get(url);
+                response = await client.get(url);
                 break;
             case 'POST':
-                response = await apiClient.post(url, data);
+                response = await client.post(url, data);
                 break;
             case 'PUT':
-                response = await apiClient.put(url, data);
+                response = await client.put(url, data);
                 break;
             case 'DELETE':
-                response = await apiClient.delete(url);
+                response = await client.delete(url);
                 break;
             default:
                 throw new Error('Unsupported HTTP method');

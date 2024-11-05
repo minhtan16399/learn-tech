@@ -1,8 +1,8 @@
-import {ProductType} from "../../../shared/validation/type";
+import {ProductType} from "../../../shared/models/productType.ts";
 import {LoadingPage} from "../../../core/components/loading";
 import {NotFoundPage} from "../../../core/components/404";
 import {ProductCard} from "../../../core/components/product-card";
-import {useGetProducts} from "../../hooks/use-get-products";
+import {useGetProducts} from "../../hooks/useGetProducts.ts";
 
 export const HomePage = () => {
     const {data, isLoading, error} = useGetProducts();

@@ -1,8 +1,8 @@
-import {ProductType} from "../../../../../shared/validation/type";
-import {ProductCard} from "../../../../../core/components/product-card";
-import {LoadingPage} from "../../../../../core/components/loading";
-import {NotFoundPage} from "../../../../../core/components/404";
-import {useGetCategory} from "../../../../hooks/use-get-category";
+import {ProductType} from "../../../../shared/models/productType.ts";
+import {ProductCard} from "../../../../core/components/product-card";
+import {LoadingPage} from "../../../../core/components/loading";
+import {NotFoundPage} from "../../../../core/components/404";
+import {useGetCategory} from "../../../hooks/useGetCategory.ts";
 
 export const CategoryProduct= () => {
     const {data, isLoading, error} = useGetCategory();

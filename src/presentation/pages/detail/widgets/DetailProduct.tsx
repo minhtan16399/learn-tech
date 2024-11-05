@@ -1,4 +1,4 @@
-import {ProductDetailType} from "../../types/product-detail.res.ts";
+import {ProductDetailType} from "../types/product.res.ts";
 
 export const ViewDetailProduct = ({product}:{product:ProductDetailType}) => {
     return (

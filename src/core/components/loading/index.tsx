@@ -1,13 +1,6 @@
 import {Spin} from "antd";
-import React from "react";
 
-const contentStyle: React.CSSProperties = {
-    padding: 50,
-    background: 'rgba(0, 0, 0, 0.05)',
-    borderRadius: 4,
-};
-
-const content = <div style={contentStyle} />;
+const content = <div className='p-[50px] bg-[rgba(0,0,0,0.05)] rounded'/>;
 
 export const LoadingPage = ({loading}:{loading:boolean}) => (
     !loading ? null : <div className='h-dvh w-full flex justify-center items-center bg-[rgba(0,0,0,0.05)]'>
